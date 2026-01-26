@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace AppView.Controllers
 {
+    [Route("app-view")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,6 +14,7 @@ namespace AppView.Controllers
             _logger = logger;
         }
 
+        [Route("index")]
         public IActionResult Index()
         {
             return View();
