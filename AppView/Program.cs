@@ -9,8 +9,10 @@ builder.Services.AddSession(o =>
 {
     o.IdleTimeout = TimeSpan.FromSeconds(5);
 });
-builder.Services.AddHttpClient();
-builder.Services.AddScoped<AppView.Services.ApiClient>();
+builder.Services.AddHttpClient("api", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7114/");
+});
 
 
 var app = builder.Build();

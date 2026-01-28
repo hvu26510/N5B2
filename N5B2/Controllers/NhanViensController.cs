@@ -23,6 +23,7 @@ namespace AppAPI.Controllers
 
         // GET: api/NhanViens
         [HttpGet]
+        [Route("")]
         public async Task<ActionResult<IEnumerable<NhanVien>>> GetnhanViens()
         {
             return await _context.nhanViens.ToListAsync();
